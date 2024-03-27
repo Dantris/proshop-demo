@@ -5,7 +5,7 @@ import generateToken from "../utils/generateToken.js";
 // @desc   Auth user & get token
 // @route  POST /api/users/login
 // @access Public
-const loginUser = asyncHandler(async (req, res) => {
+const authUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
 
   const user = await User.findOne({ email });
@@ -142,7 +142,7 @@ const updateUser = asyncHandler(async (req, res) => {
 });
 
 export {
-  loginUser,
+  authUser,
   registerUser,
   logoutUser,
   getUserProfile,
