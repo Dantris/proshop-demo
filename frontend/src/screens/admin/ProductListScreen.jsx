@@ -5,16 +5,24 @@ import { FaEdit, FaTrash } from 'react-icons/fa'
 import Message from '../../components/Message'
 import Loader from '../../components/Loader'
 import { toast } from 'react-toastify'
-import { useGetProductsQuery, useCreateProductMutation } from '../../slices/productsApiSlice'
+import { useGetProductsQuery, useCreateProductMutation, useDeleteProductMutation } from '../../slices/productsApiSlice'
 
 const ProductListScreen = () => {
     const { data: products, error, isLoading, refetch } = useGetProductsQuery();
 
     const [createProduct, { isLoading: loadingCreate }] = useCreateProductMutation();
 
-    const deleteHandler = (id) => {
-        if (window.confirm('Are you sure')) {
-        // DELETE PRODUCTS
+    const [deleteProduct, { isLoading: loadingDelete }] = useDeleteProductMutation();    
+
+    const deleteHandler = async (id) => {
+        if (window.confirm('Are you sure?')) {
+            try {
+                await deleteProduct(id);
+                toast.success('Product deleted');
+                refetch();
+            } catch (err) {
+                toast.error(err?.data?.message || err.error)
+            }
         }
     }
 
@@ -44,6 +52,7 @@ const ProductListScreen = () => {
     </Row>
 
     {loadingCreate && <Loader />}
+    {loadingDelete && <Loader />}
     {isLoading ? <Loader /> : error ? <Message variant='danger'>{error}</Message> : (
         <>
             <Table striped bordered hover responsive className='table-sm'>
