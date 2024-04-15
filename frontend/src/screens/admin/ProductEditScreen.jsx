@@ -151,6 +151,8 @@ const ProductEditScreen = () => {
                         label='Choose File'
                         onChange={uploadFileHandler}
                     ></Form.Control>
+                                  {loadingUpload && <Loader />}
+
                 </Form.Group>
                 <Button type='submit' variant='primary' className='my-3'>
                     Update
