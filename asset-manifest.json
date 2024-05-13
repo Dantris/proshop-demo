@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/proshop-demo/static/css/main.8a2f6bc4.css",
-    "main.js": "/proshop-demo/static/js/main.fb0aaa7c.js",
+    "main.js": "/proshop-demo/static/js/main.c415c589.js",
     "static/js/453.8ab44547.chunk.js": "/proshop-demo/static/js/453.8ab44547.chunk.js",
     "index.html": "/proshop-demo/index.html",
     "main.8a2f6bc4.css.map": "/proshop-demo/static/css/main.8a2f6bc4.css.map",
-    "main.fb0aaa7c.js.map": "/proshop-demo/static/js/main.fb0aaa7c.js.map",
+    "main.c415c589.js.map": "/proshop-demo/static/js/main.c415c589.js.map",
     "453.8ab44547.chunk.js.map": "/proshop-demo/static/js/453.8ab44547.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8a2f6bc4.css",
-    "static/js/main.fb0aaa7c.js"
+    "static/js/main.c415c589.js"
   ]
 }
